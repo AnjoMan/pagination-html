@@ -1,0 +1,169 @@
+/* root: 
+
+	var-sc-rorange: #FFAA71;
+	var-sc-orange: #FFC671;
+	var-sc-red: #FF7471;
+	var-sc-blue: #56C3B1;
+}
+
+ color scheme, in .less format*/
+
+
+html,body{ height: 100%; width: 100%;
+			padding: 0px; margin:0px;}
+
+
+
+/* remove ability to select text */
+div {
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* to avoid collapsed parent, divs need to be inline-block and clear:right;*/
+
+
+
+/* style the app pages*/
+.info > *{
+	float: left;
+	clear: left;
+}
+.info h {
+	font-family: sans-serif;
+	border-bottom: #56C3B1 5px solid;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.info h ~ * {
+	font-size: 25px;
+	margin:10px;
+}
+
+select, input {
+	padding-left: 4px;
+	border: none;	
+	border-right: #FFAA71 solid 1px;
+	border-bottom: #FFAA71 solid 1px;
+	border-radius : 4px;
+	font-size: 25px;
+	background: #FF7471;
+	transition: all .25s ease;
+}
+select:hover, input:hover {
+
+	border-bottom: #56C3B1 solid 1px;
+	border-right: #56C3B1 solid 1px;
+}
+
+/* get rid of ugly spinner button on date */
+::-webkit-inner-spin-button { display: none; }
+::-webkit-input-placeholder {  color: gray; }
+:-moz-placeholder {   color: gray;  } /* Firefox 18- */
+::-moz-placeholder {  color: gray;  }/* Firefox 19+ */
+:-ms-input-placeholder {  color: gray; }
+
+
+/*style currency input and put '$' infront of it */
+span#amt_span {
+	clear: none;
+}
+span#money_sign {	
+	color: #56C3B1;
+	position:absolute;
+	padding-top: 3px;
+	padding-left: 5px;
+	} /* color the dollar sign */
+input[name="amount"]{ 
+	width: 130px;
+	text-indent: 18px;}
+
+
+
+
+/*style each page */
+.info {
+	/*width: 100%;*/
+	display: block;
+	/*height: 100%;*/
+	width: auto;
+	width: 200px;
+	position: absolute;
+	padding: 50px 10px 10px 50px;
+	/*padding: 10px;*/
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+
+}
+
+/* adjust the .info width to screen size. unfortunately 
+ there is no good way to make .info conform to screen size*/
+@media(min-width: 500px){.info { width: 300px;}}
+@media(min-width: 600px){.info { width: 400px;}}
+@media(min-width: 700px){.info { width: 500px;}}
+@media(min-width: 800px){.info { width: 600px;}}
+@media(min-width: 900px){.info { width: 700px;}}
+@media(min-width: 1000px){.info { width: 800px;}}
+@media(min-width: 1100px){.info { width: 900px;}}
+@media(min-width: 1200px){.info { width: 1000px;}}
+
+
+
+
+
+
+
+/*background color,  positioning to allow .info to swipe in and out */
+.nav-els{
+	background-color: #FFC671;
+	position: relative;
+}
+
+
+
+
+
+
+/*styling for nav buttons */
+.nav {
+	text-align: center;
+	font-size: 60px;
+	font-weight: bold;
+	height: 100%;
+	width: 50px;
+	padding: 35% 0px 35% 0px;
+	background-color: #FFAA71;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* fill center layout */
+.nav {
+	height: 100%;
+	width: 50px;
+
+}
+div#back.nav{float: left;}
+div#forward.nav{float:right;}
+.nav-els{
+	height: 100%;
+	overflow: hidden;
+}

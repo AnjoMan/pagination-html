@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Baumans|Open+Sans' />
+
+	<script src="js/modernizr.js" ></script>
+	<script src="js/respond.js" ></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/prefixfree.js" ></script>
+	 <script src="js/navigate.js"></script>
+
+	<title>Paginated App</title>
+</head>
+
+
+<body>
+	<div class='nav' id='back'>	&lt </div>
+	<div class="nav" id="forward">	&gt </div>
+	<div class='nav-els'>
+
+		<div class="info" id="what">
+			<h>What?</h>
+
+			<select name="Category">
+				<option value="Food">Food</option> 
+				<option value="Clothing" selected>Clothing</option>
+				<option value="Entertaintment">Entertainment</option>
+				<option value="Home">Home</option>
+				<option value="Giving">Giving</option>
+				<option value="Medical">Medical</option>
+				<option value="Miscellaneous">Miscellaneous</option>
+				<option value="School">School</option>
+				<option value="Tax">Tax</option>
+				<option value="Income">Income</option>
+				<option value="Transportation">Transportation</option>
+			</select>
+
+			
+
+			<input type="text" list="subcategories" placeholder="sub-category">
+
+			<datalist id="subcategories">
+				<option>Groceries</option>
+				<option>Eating Out</option>
+				<option>Alcohol</option>
+				<option>Equipment</option>
+				<option>Transit</option>
+				<option>Coffee</option>
+				<option>Toiletries</option>
+				<option>Gifts</option>
+				<option>Phones</option>
+				<option>Tithe</option>
+				<option>Rent</option>
+				<option>Crafts</option>
+				<option>Fellowship</option>
+				<option>Bikes</option>
+				<option>Internet</option>
+				<option>Car Share</option>
+				<option>Vacation</option>
+				<option>GST/HST Credit</option>
+				<option>Movie</option>
+				<option>App</option>
+				<option>Fuel</option>
+				<option>Concert</option>
+				<option>Hydro</option>
+				<option>Music</option>
+				<option>Lunch</option>
+				<option>Babysit</option>
+				<option>Laundry</option>
+				<option>Taxi</option>
+				<option>Kitchen</option>
+				<option>Game</option>
+				<option>Random Purchase</option>
+				<option>Massage</option>
+				<option>Personal</option>
+				<option>Parking</option>
+				<option>Bed</option>
+				<option>Return</option>
+				<option>Smoking</option>
+				<option>Hair Cut</option>
+				<option>Prescription Drugs</option>
+				<option>Entertainment</option>
+				<option>Tuition</option>
+				<option>Media</option>
+				<option>School</option>
+				<option>Dentist</option>
+				<option>Books</option>
+				<option>Attraction</option>
+				<option>Rewards</option>
+				<option>Jewelry</option>
+				<option>Library</option>
+				<option>Drugs</option>
+				<option>Insurance</option>
+				<option>Bath</option>
+				<option>Nanny </option>
+				<option>Sporting Event</option>
+				<option>Unknown</option>
+				<option>Travel</option>
+				<option>Textbook</option>
+				<option>Camping</option>
+				<option>Car</option>
+				<option>Donation</option>
+				<option>Furnishings</option>
+</datalist>
+
+
+
+			
+		</div>
+
+
+
+		<div class="info" id="where">
+			<h>Where?</h>
+
+			<input type="text" name="merchant" placeholder="Merchant">
+
+			</input>
+
+			<input type="text" name="details" placeholder="Details">
+			</input>
+		</div>
+
+		<div class="info" id="When"><h>When?</h><input type="date" id='mDatepicker'></input></div>
+		<script>
+			$(function(){
+				var date = new Date()
+				var prettyDate = date.getFullYear() + "-" + zeroPad(date.getMonth()+1) + "-" + zeroPad(date.getDate())
+				$('#mDatepicker').val(prettyDate)
+			});
+			function zeroPad(val){ return ("00"+val).slice(-2)}
+
+		</script>
+
+		<div class="info" id="Amount">
+			<h>How Much?</h>
+			<select name="C/D">
+				<option value="Credit">Credit</option>
+				<option value="Debit">Debit</option>
+			</select>
+
+			<span id="amt_span"><span id="money_sign">$</span><input type="number" step="0.01" name="amount"/></span>
+
+		</div>
+
+		<div class="info" id="why"><h>Why?</h><p>Because you are stupid!</p></div>
+	</div>
+</body>
+
+
+</html>
