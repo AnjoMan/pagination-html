@@ -70,7 +70,9 @@ select:hover, input:hover {
 :-moz-placeholder {   color: gray;  } /* Firefox 18- */
 ::-moz-placeholder {  color: gray;  }/* Firefox 19+ */
 :-ms-input-placeholder {  color: gray; }
-
+/*::-webkit-calendar-picker-indicator{
+	background: none;
+};*/
 
 /*style currency input and put '$' infront of it */
 span#amt_span {
