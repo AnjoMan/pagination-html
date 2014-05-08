@@ -12,17 +12,18 @@
 	<script src="js/respond.js" ></script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="js/prefixfree.js" ></script>
-	 <script src="js/navigate.js"></script>
+	<script src="js/navigate.js"></script>
+	<!-- <script src="js/jquery.mobile.js"></script> -->
 
 	<title>Paginated App</title>
 </head>
 
 
 <body>
-	<div class='nav' id='back'>	&lt </div>
-	<div class="nav" id="forward">	&gt </div>
+	<div class='nav' id='back'>	<p>&lt</p> </div>
+	<div class="nav" id="forward">	<p>&gt</p> </div>
 	<div class='nav-els'>
-
+		<form action="php/spending.php" method="post"><fieldset>
 		<div class="info" id="what">
 			<h>What?</h>
 
@@ -42,7 +43,7 @@
 
 			
 
-			<input type="text" list="subcategories" placeholder="sub-category">
+			<input type="text" name = "Sub-Category"list="subcategories" placeholder="sub-category">
 
 			<datalist id="subcategories">
 				<option>Groceries</option>
@@ -106,27 +107,27 @@
 				<option>Car</option>
 				<option>Donation</option>
 				<option>Furnishings</option>
-</datalist>
+			</datalist>
 
 
 
 			
-		</div>
+		</div> <!-- info/what -->
 
 
 
 		<div class="info" id="where">
 			<h>Where?</h>
 
-			<input type="text" name="merchant" placeholder="Merchant">
+			<input type="text" name="Merchant" placeholder="Merchant">
 
 			</input>
 
 			<input type="text" name="details" placeholder="Details">
 			</input>
-		</div>
-
-		<div class="info" id="When"><h>When?</h><input type="date" id='mDatepicker' required="required"></input></div>
+		</div> <!-- info/where -->
+ 
+		<div class="info" id="When"><h>When?</h><input type="date" name="Date" id='mDatepicker' required="required"></input></div> <!-- info/when -->
 		<script>
 			$(function(){
 				var date = new Date()
@@ -141,15 +142,21 @@
 			<h>How Much?</h>
 			<select name="C/D">
 				<option value="Credit">Credit</option>
-				<option value="Debit">Debit</option>
+				<option value="Debit" selected="selected">Debit</option>
 			</select>
 
-			<span id="amt_span"><span id="money_sign">$</span><input type="number" step="0.01" name="amount"/></span>
+			<span id="amt_span"><span id="money_sign">$</span><input type="number" step="0.01" name="Amount"/></span>
+			<br><br><br><br><br><br>
+			<input type="submit" value = "Submit" />
 
-		</div>
+		</div> <!-- info/howmuch -->
 
-		<div class="info" id="why"><h>Why?</h><p>Because you are stupid!</p></div>
-	</div>
+		<div class="info" id="why"><h>Why?</h><p>Because you are stupid!</p>
+
+		</div> <!-- info/why -->
+
+		</fieldset></form>
+	</div> <!-- navEls -->
 </body>
 
 

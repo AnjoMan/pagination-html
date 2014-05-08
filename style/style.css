@@ -9,7 +9,7 @@
  color scheme, in .less format*/
 
 
-html,body{ height: 100%; width: 100%;
+html,body{ height: 103%; width: 100%;
 			padding: 0px; margin:0px;}
 
 
@@ -58,11 +58,19 @@ select, input {
 	background: #FF7471;
 	transition: all .25s ease;
 }
-select:hover, input:hover {
-
+select:hover, input:hover{
 	border-bottom: #56C3B1 solid 1px;
 	border-right: #56C3B1 solid 1px;
 }
+
+select:focus, input:focus{	
+	outline: none;
+	border-bottom: #56C3B1 solid 2px;
+	border-right: #56C3B1 solid 2px;
+
+}
+
+
 
 /* get rid of ugly spinner button on date */
 ::-webkit-inner-spin-button { display: none; }
@@ -84,10 +92,17 @@ span#money_sign {
 	padding-top: 3px;
 	padding-left: 5px;
 	} /* color the dollar sign */
-input[name="amount"]{ 
+input[name="Amount"]{ 
 	width: 130px;
-	text-indent: 18px;}
+	text-indent: 18px;
+	}
 
+
+input[type="submit"]{
+	/*float: right;*/
+	padding: 8px 25px 8px 25px;
+	margin-left: 50px;
+}
 
 
 
@@ -110,6 +125,9 @@ input[name="amount"]{
 
 /* adjust the .info width to screen size. unfortunately 
  there is no good way to make .info conform to screen size*/
+
+@media(min-width: 300px){.info { width: 250px;}}
+@media(min-width: 400px){.info { width: 350px;}}
 @media(min-width: 500px){.info { width: 300px;}}
 @media(min-width: 600px){.info { width: 400px;}}
 @media(min-width: 700px){.info { width: 500px;}}
@@ -135,16 +153,40 @@ input[name="amount"]{
 
 
 
-
 /*styling for nav buttons */
 .nav {
-	text-align: center;
-	font-size: 60px;
-	font-weight: bold;
 	height: 100%;
 	width: 50px;
-	padding: 35% 0px 35% 0px;
 	background-color: #FFAA71;
+}
+
+.nav p {
+    font-family: sans-serif;
+    color: #FFC671;
+    text-shadow: 1px 1px 2px #56C3B1;
+
+	font-weight: bold;
+	font-size: 60px;
+	width: 50px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+}
+
+@media(max-width: 500px) { 
+	.nav p {
+		width: 30px;
+		font-size: 30px;
+		margin-top: -15px;
+	}
+	.info{
+		padding: 50px 5px 5px 15px;
+	}
+	select, input{
+		width: 200px;
+	}
+	select[name="C/D"]{ width: auto;}
 }
 
 
@@ -162,6 +204,9 @@ input[name="amount"]{
 	height: 100%;
 	width: 50px;
 
+}
+@media(max-width: 500px) { 
+	.nav {width: 30px;}	
 }
 div#back.nav{float: left;}
 div#forward.nav{float:right;}

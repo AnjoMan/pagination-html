@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+	window.scrollTo(0,document.body.scrollHeight);
+
+
+	// don't allow key navigation of select for left/right, since they are page navigation
+	$('select').keydown(function(event){
+		console.log(event.keyCode)
+		if ((event.keyCode == 37) | (event.keyCode == 39)){
+			event.preventDefault()
+		}
+	});
+
 	$(document.documentElement).keyup(function (event) { // handle cursor keys
 	  if (event.keyCode == 37) { moveBackward() }// go left
 	  else if (event.keyCode == 39) {
