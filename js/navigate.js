@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-	window.scrollTo(0,document.body.scrollHeight);
 
 
 	// don't allow key navigation of select for left/right, since they are page navigation
